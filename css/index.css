@@ -1,7 +1,5 @@
 .heading {
-    font-size: 40px
-}
-
-#input-group {
-    left: 300px;
+    font-size: 40px;
+    color: darkblue;
+    font-family: cursive;
 }
