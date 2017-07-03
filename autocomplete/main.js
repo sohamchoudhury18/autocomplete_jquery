@@ -13,13 +13,14 @@ $.fn.autocomplete = function(url, keyboardval, mouseval, args, datalocation, sep
     this.args = args;
     this.datalocation = datalocation;
     this.seperator = seperator;
+
     //init fns
-    this.Ui = new Ui();
+    this.Ui = new Ui(this);
     this.Api = new Api();
     this.Event = new Event(this, this.Ui, this.Api);
 
     //invoking functions
     this.Event.capture();
-    this.Ui.createele(this);
+    this.Ui.create_behind_search(this);
 
 };
