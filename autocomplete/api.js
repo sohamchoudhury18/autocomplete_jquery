@@ -29,9 +29,9 @@ Api.prototype = {
             $.ajax({
                 url: "samplejson/sample.json",
                 success: function(jsonobj) {
-                    callback(jsonobj.predictions);
+                    callback(jsonobj.predictions, keyword);
                 }
-            })
+            });
 
 
 

@@ -61,10 +61,10 @@ Event.prototype = {
                     _this.ui.remove();
 
                     //ajax call to api with parameters from the user
-                    _this.api.ajaxcall(keyword, _this.obj.url, _this.obj.args, _this.obj.datalocation, _this.obj.seperator, function(jsonobj) {
+                    _this.api.ajaxcall(keyword, _this.obj.url, _this.obj.args, _this.obj.datalocation, _this.obj.seperator, function(jsonobj,keyword) {
 
                         //callback to ui for showing suggestions
-                        _this.ui.loadelements(_this.obj, jsonobj);
+                        _this.ui.loadelements(keyword,_this.obj, jsonobj);
 
                     });
                 }

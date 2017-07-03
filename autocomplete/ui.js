@@ -52,12 +52,13 @@ Ui.prototype = {
         this.obj.parent().after(_this.behind_div);
 
     },
-    loadelements: function(obj, data) {
+    loadelements: function(keyword, obj, data) {
         this.obj = obj;
         this.data = data;
+        this.keyword = keyword;
         //loading elements
         if (this.obj.val() != "") {
-            this.loadsuggestions(this.obj, this.data);
+            this.loadsuggestions(this.keyword, this.obj, this.data);
         }
         else {
             this.remove();
@@ -78,11 +79,13 @@ Ui.prototype = {
         $("#" + id).nextAll().css({
             "background-color": "white",
         });
-        this.behind_searchbox.val($("#" + id).html());
+        this.behind_searchbox.val($("#" + id).text());
+        $("#" + id).html(this.replace(this.keyword, $("#" + id).text()));
         console.log(this.behind_searchbox.val());
     },
-    loadsuggestions: function(obj, data) {
+    loadsuggestions: function(keyword, obj, data) {
         this.obj = obj;
+        this.keyword = keyword;
         this.data = data;
         var _this = this;
         console.log("suggestions loaded");
@@ -108,6 +111,7 @@ Ui.prototype = {
 
         this.data.forEach(function(val, index) {
             this.sugg = _this.samplesuggestions.clone();
+            console.log(_this.keyword);
             this.sugg.html(val.structured_formatting.main_text.toLowerCase());
             this.sugg.attr("id", _this.obj.attr("id") + "sugg" + index);
             _this.suggestions_div.append(this.sugg);
@@ -147,5 +151,11 @@ Ui.prototype = {
     copybehind: function(obj) {
         this.obj = obj;
         this.obj.val(this.behind_searchbox.val());
-    }
+    },
+    replace: function(key, val) {
+        var str;
+        str = val.replace(key, "<span style='background-color:yellow'>" + key + "</span>");
+        console.log(str);
+        return str;
+    },
 };
