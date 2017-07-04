@@ -8,28 +8,35 @@ Api.prototype = {
     ajaxcall: function(keyword, url, argumentsarr, datalocation, seperator, callback) {
         if (keyword != "") {
             console.log(seperator);
-            var argstr = "",
-                dataloc = "";
+            this.argstr = "";
+            this.dataloc = "";
+            this.index;
+            var _this = this;
 
-            var str = argumentsarr.pop();
-            str = str.split("keyword");
-            str = str[0];
+            argumentsarr.forEach(function(val, index) {
 
-            str = str + keyword;
+                if (val == "keyword") {
+                    argumentsarr[index] = keyword;
+                    _this.index = index;
+                }
+                else {
+                    argumentsarr[_this.index] = keyword;
+                }
+            });
 
             console.log(argumentsarr);
-            console.log(str);
-            for (var i in argumentsarr) {
-                argstr += seperator + argumentsarr[i];
-            }
-            argstr = argstr + seperator + str;
-            url = url + argstr;
-            console.log(url);
 
+            argumentsarr.forEach(function(val, index) {
+                _this.argstr += seperator + val
+            });
+            url += _this.argstr;
+            console.log(url);
             $.ajax({
+                //url: url,
                 url: "samplejson/sample.json",
                 success: function(jsonobj) {
-                    callback(jsonobj.predictions, keyword);
+                    console.log(jsonobj);
+                    callback(jsonobj.data, keyword);
                 }
             });
 

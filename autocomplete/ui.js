@@ -54,13 +54,16 @@ Ui.prototype = {
         //creating suggestiondiv
         this.createsuggestions(this.obj);
     },
-    loadelements: function(keyword, obj, data) {
+    loadelements: function(keyword, obj, data, loc) {
         this.obj = obj;
         this.data = data;
+        this.loc = loc;
+        console.log(this.loc);
+
         this.keyword = keyword;
         //loading elements
         if (this.obj.val() != "") {
-            this.loadsuggestions(this.keyword, this.obj, this.data);
+            this.loadsuggestions(this.keyword, this.obj, this.data, this.loc);
         }
         else {
             this.remove();
@@ -85,10 +88,17 @@ Ui.prototype = {
         $("#" + id).html(this.replace(this.keyword, $("#" + id).text()));
         console.log(this.behind_searchbox.val());
     },
-    loadsuggestions: function(keyword, obj, data) {
+    loadsuggestions: function(keyword, obj, data, loc) {
         this.obj = obj;
         this.keyword = keyword;
         this.data = data;
+        this.loc = loc;
+        this.location = "";
+        // //this.loc.forEach(function(val, index) {
+        //     this.location += "." + val + "[" + index + "]";
+        // });
+
+        console.log(this.data);
         var _this = this;
         console.log("suggestions loaded");
         //invoking  suggestions div creation
@@ -113,8 +123,8 @@ Ui.prototype = {
 
         this.data.forEach(function(val, index) {
             this.sugg = _this.samplesuggestions.clone();
-            console.log(_this.keyword);
-            this.sugg.html(val.structured_formatting.main_text.toLowerCase());
+            console.log(val);
+            this.sugg.html(val.name.toLowerCase());
             this.sugg.attr("id", _this.obj.attr("id") + "sugg" + index);
             this.sugg.addClass(_this.obj.attr("id") + "sugg");
             _this.suggestions_div.append(this.sugg);
@@ -168,7 +178,7 @@ Ui.prototype = {
     onhover: function(ele) {
         this.behind_searchbox.val(ele.text());
         ele.css({
-            "box-shadow": "5px 10px 5px grey"
+            "box-shadow": "5px 10px 7px grey"
         });
     },
     offhover: function(ele) {

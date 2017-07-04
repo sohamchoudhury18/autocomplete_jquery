@@ -1,226 +1,24 @@
 {
-    "predictions": [
-        {
-            "description": "Badarpur Thermal Power Station Subway, Badarpur, New Delhi, Delhi, India",
-            "id": "6fb8584d25c300ded64edaf0e720efcb5c27181c",
-            "matched_substrings": [
-                {
-                    "length": 8,
-                    "offset": 0
-            }
-         ],
-            "place_id": "EkhCYWRhcnB1ciBUaGVybWFsIFBvd2VyIFN0YXRpb24gU3Vid2F5LCBCYWRhcnB1ciwgTmV3IERlbGhpLCBEZWxoaSwgSW5kaWE",
-            "reference": "CoQBdgAAADUpj86UWrO_yBpOg-C0lNHSp3b3yBnr_gICrFmM4ONSXP0HiqjARGGh5kxVJuuwpNXKLmtzsjwX4aC56TL37qeRBmjmxTANuw378zF2yOt1zrT4LwLnJrK3zEMsxoA0JtXo2ky21CwfERNVuE1pNKo6ExvmdaJ6MSi9RO8Tsn9CEhApkZbiIlPsScj8UOB-aw3IGhQ0E9kZpUR4nvy1nGTOrc4WeNMo1g",
-            "structured_formatting": {
-                "main_text": "Badarpur Thermal Power Station Subway",
-                "main_text_matched_substrings": [
-                    {
-                        "length": 8,
-                        "offset": 0
-               }
-            ],
-                "secondary_text": "Badarpur, New Delhi, Delhi, India"
-            },
-            "terms": [
-                {
-                    "offset": 0,
-                    "value": "Badarpur Thermal Power Station Subway"
-            },
-                {
-                    "offset": 39,
-                    "value": "Badarpur"
-            },
-                {
-                    "offset": 49,
-                    "value": "New Delhi"
-            },
-                {
-                    "offset": 60,
-                    "value": "Delhi"
-            },
-                {
-                    "offset": 67,
-                    "value": "India"
-            }
-         ],
-            "types": ["route", "geocode"]
-      },
-        {
-            "description": "Badarpur - Mehrauli Road, Block G, New Delhi, Delhi, India",
-            "id": "6af41c3d23943d2e485c2a887b3b2e9dbb409ae8",
-            "matched_substrings": [
-                {
-                    "length": 8,
-                    "offset": 0
-            }
-         ],
-            "place_id": "EjpCYWRhcnB1ciAtIE1laHJhdWxpIFJvYWQsIEJsb2NrIEcsIE5ldyBEZWxoaSwgRGVsaGksIEluZGlh",
-            "reference": "CnRoAAAABLqBjMZk4LaxxIpxsNhA00Ux_tfsBws_4Nu2Em0eZd59mNqA-eJhBC01RkFiEvgnYnqxGh06S8AeO2P5qLWdZoj6-X1ZrvQQsgbxhlpcnQhf19ko4Sa1KP8eSjQSD4fqj7o0luzMZGEZ9TgZIIchhBIQQzOUdZU2mDazqPk6Vpx-nhoUgSkz0nThJcWBNyzeSxb40oeppXA",
-            "structured_formatting": {
-                "main_text": "Badarpur - Mehrauli Road",
-                "main_text_matched_substrings": [
-                    {
-                        "length": 8,
-                        "offset": 0
-               }
-            ],
-                "secondary_text": "Block G, New Delhi, Delhi, India"
-            },
-            "terms": [
-                {
-                    "offset": 0,
-                    "value": "Badarpur - Mehrauli Road"
-            },
-                {
-                    "offset": 26,
-                    "value": "Block G"
-            },
-                {
-                    "offset": 35,
-                    "value": "New Delhi"
-            },
-                {
-                    "offset": 46,
-                    "value": "Delhi"
-            },
-                {
-                    "offset": 53,
-                    "value": "India"
-            }
-         ],
-            "types": ["route", "geocode"]
-      },
-        {
-            "description": "Pedestrian Underpass, Badarpur Metro Station, Badarpur, New Delhi, Haryana, India",
-            "id": "7686746049f4da07fdec7994512122ee6ed74dfb",
-            "matched_substrings": [
-                {
-                    "length": 8,
-                    "offset": 22
-            }
-         ],
-            "place_id": "ElFQZWRlc3RyaWFuIFVuZGVycGFzcywgQmFkYXJwdXIgTWV0cm8gU3RhdGlvbiwgQmFkYXJwdXIsIE5ldyBEZWxoaSwgSGFyeWFuYSwgSW5kaWE",
-            "reference": "CoQBfwAAAAWOc5aISLpr_FEak9z-CyLUBc5V9Lkd-pa3T6a5mT6LRQmGqVDpsRITaK7m-hbMKRDKV6BbN-NswOloHryTWot1Hn0qzuei3pL9fBfyNZ1ZhVAijsh_O0QXOWzl3DSpwi0etL6jrwnEh5tCHeSTMFX2Cs39bqkRt7JPn-i1g-QeEhCHCXGcLPzY2sFXIU-e6_yFGhT_mgX2z-vzV8yMhVs4YoL17xqI5Q",
-            "structured_formatting": {
-                "main_text": "Pedestrian Underpass, Badarpur Metro Station",
-                "main_text_matched_substrings": [
-                    {
-                        "length": 8,
-                        "offset": 22
-               }
-            ],
-                "secondary_text": "Badarpur, New Delhi, Haryana, India"
-            },
-            "terms": [
-                {
-                    "offset": 0,
-                    "value": "Pedestrian Underpass, Badarpur Metro Station"
-            },
-                {
-                    "offset": 46,
-                    "value": "Badarpur"
-            },
-                {
-                    "offset": 56,
-                    "value": "New Delhi"
-            },
-                {
-                    "offset": 67,
-                    "value": "Haryana"
-            },
-                {
-                    "offset": 76,
-                    "value": "India"
-            }
-         ],
-            "types": ["route", "geocode"]
-      },
-        {
-            "description": "Badarpur Market Subway, Badarpur, New Delhi, Delhi, India",
-            "id": "0bb58ffe79777bd62941449c833db62b5a2bb850",
-            "matched_substrings": [
-                {
-                    "length": 8,
-                    "offset": 0
-            }
-         ],
-            "place_id": "EjlCYWRhcnB1ciBNYXJrZXQgU3Vid2F5LCBCYWRhcnB1ciwgTmV3IERlbGhpLCBEZWxoaSwgSW5kaWE",
-            "reference": "CnRnAAAAJeI1KldoAGvfeeyS7vuvy47kmB3ixqx4cRJcqguVxaSQeUfh86MpAkGhIDBKP1lm_1Fg0Q-6dGsKRQ3AK3APBl7xOASqpTLaZgQ0d_OacDGLb3li9MZQ9cEO0Qnc6cqeYqVJr_HplQOiPcGCDJG6KBIQDrWfLhIJqLIbW9IQH8ATxRoUKOYmi3vmhtjQmfnpK9pBpxIZdZU",
-            "structured_formatting": {
-                "main_text": "Badarpur Market Subway",
-                "main_text_matched_substrings": [
-                    {
-                        "length": 8,
-                        "offset": 0
-               }
-            ],
-                "secondary_text": "Badarpur, New Delhi, Delhi, India"
-            },
-            "terms": [
-                {
-                    "offset": 0,
-                    "value": "Badarpur Market Subway"
-            },
-                {
-                    "offset": 24,
-                    "value": "Badarpur"
-            },
-                {
-                    "offset": 34,
-                    "value": "New Delhi"
-            },
-                {
-                    "offset": 45,
-                    "value": "Delhi"
-            },
-                {
-                    "offset": 52,
-                    "value": "India"
-            }
-         ],
-            "types": ["route", "geocode"]
-      },
-        {
-            "description": "Badarpur Road, Badarpur Said, Haryana, India",
-            "id": "66dc6f732180f31a793be10e8b751bab548ab131",
-            "matched_substrings": [
-                {
-                    "length": 8,
-                    "offset": 0
-            }
-         ],
-            "place_id": "EixCYWRhcnB1ciBSb2FkLCBCYWRhcnB1ciBTYWlkLCBIYXJ5YW5hLCBJbmRpYQ",
-            "reference": "CmRaAAAAHq5WSOrYpET6SnZpqRimY4Gg_6CIGqdJl-WndohkiHUOwyd58sk0vkEV8p_jT_xOGJAbwupT_r00_dVmgUwKuZrCCgOOveKTDwuikodFqA2LGaZzS5PgAO3UB2GFARPhEhD801x1ELUpfEMY7rRdOnYYGhSdMNeR_WW7iE-3BkXx4YNjsUIcCg",
-            "structured_formatting": {
-                "main_text": "Badarpur Road",
-                "main_text_matched_substrings": [
-                    {
-                        "length": 8,
-                        "offset": 0
-               }
-            ],
-                "secondary_text": "Badarpur Said, Haryana, India"
-            },
-            "terms": [
-                {
-                    "offset": 0,
-                    "value": "Badarpur Road"
-            },
-                {
-                    "offset": 15,
-                    "value": "Badarpur Said"
-            },
-                {
-                    "offset": 30,
-                    "value": "Haryana"
-            },
-                {
-                    "offset": 39,
-                    "value": "India"
-            }
-         ],
-            "types": ["route", "geocode"]
-      }
-   ],
-    "status": "OK"
+    "error": false,
+    "data": [{
+        "name": "DLF Belvedere Park",
+        "locality": "DLF City Phase 2",
+        "city": "Gurgaon"
+    }, {
+        "name": "DLF Belvedere Towers",
+        "locality": "DLF City Phase 2",
+        "city": "Gurgaon"
+    }, {
+        "name": "DLF Carlton Estate",
+        "locality": "DLF City Phase 5",
+        "city": "Gurgaon"
+    }, {
+        "name": "DLF Exclusive Floors",
+        "locality": "DLF City Phase 5",
+        "city": "Gurgaon"
+    }, {
+        "name": "DLF Express Greens",
+        "locality": "Sector 1A IMT Manesar",
+        "city": "Gurgaon"
+    }]
 }
