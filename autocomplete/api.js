@@ -32,8 +32,8 @@ Api.prototype = {
             url += _this.argstr;
             console.log(url);
             $.ajax({
-                //url: url,
-                url: "samplejson/sample.json",
+                url: url,
+                //url: "samplejson/sample.json",
                 success: function(jsonobj) {
                     console.log(jsonobj);
                     callback(jsonobj.data, keyword);
