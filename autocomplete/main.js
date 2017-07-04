@@ -21,6 +21,6 @@ $.fn.autocomplete = function(url, keyboardval, mouseval, args, datalocation, sep
 
     //invoking functions
     this.Event.capture();
-    this.Ui.create_behind_search(this);
+    this.Ui.create_all(this);
 
 };

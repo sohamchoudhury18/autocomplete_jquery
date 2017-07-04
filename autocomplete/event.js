@@ -1,3 +1,4 @@
+/*global $ */
 var Event = function(obj, ui, api) {
     this.obj = obj;
     this.ui = ui;
@@ -12,11 +13,31 @@ Event.prototype = {
 
     capture: function() {
         var _this = this;
+        var onclkid = "#" + this.obj.attr("id") + "_suggestions_div";
+        var onhoverclass = "." + this.obj.attr("id") + "sugg";
+
+        //on keydown
         this.obj.on("keydown", function(e) {
             _this.keydownfn(e, _this);
         });
 
+        //on click on suggestion
+        $(document).on("click", onclkid, function(e) {
+            console.log($(e.target));
+            _this.ui.onclick($(e.target));
+        });
+
+        //on hover suggestion
+        $(document).on("mouseenter", onhoverclass, function(e) {
+            console.log($(e.target));
+            _this.ui.onhover($(e.target));
+        });
+        $(document).on("mouseleave", onhoverclass, function(e) {
+            console.log($(e.target));
+            _this.ui.offhover($(e.target));
+        });
     },
+    //keydown fn for keyboard strokes
     keydownfn: function(e, _this) {
         //adding debounce func
         clearTimeout(_this.timeout);
@@ -41,30 +62,42 @@ Event.prototype = {
                     if (_this.counter == 0) {
                         _this.counter++;
                         _this.ui.loadbehind(_this.counter);
-
+                        _this.ui.copybehind(_this.obj);
                     }
                     else if (_this.counter <= 3) {
                         _this.counter++;
                         _this.ui.loadbehind(_this.counter);
+                        _this.ui.copybehind(_this.obj);
                     }
                     else if (_this.counter > 3) {
                         _this.counter = 0;
                         _this.ui.loadbehind(_this.counter);
+                        _this.ui.copybehind(_this.obj);
                     }
 
                 }
                 else if (e.key == "ArrowUp") {
                     console.log("aup");
+                    if (_this.counter > 0) {
+                        _this.counter--;
+                        _this.ui.loadbehind(_this.counter);
+                        _this.ui.copybehind(_this.obj);
+                    }
+                    else if (_this.counter < 0) {
+                        _this.counter = 0;
+                        _this.ui.loadbehind(_this.counter);
+                        _this.ui.copybehind(_this.obj);
+                    }
                 }
                 else {
                     //removing previous results
                     _this.ui.remove();
 
                     //ajax call to api with parameters from the user
-                    _this.api.ajaxcall(keyword, _this.obj.url, _this.obj.args, _this.obj.datalocation, _this.obj.seperator, function(jsonobj,keyword) {
+                    _this.api.ajaxcall(keyword, _this.obj.url, _this.obj.args, _this.obj.datalocation, _this.obj.seperator, function(jsonobj, keyword) {
 
                         //callback to ui for showing suggestions
-                        _this.ui.loadelements(keyword,_this.obj, jsonobj);
+                        _this.ui.loadelements(keyword, _this.obj, jsonobj);
 
                     });
                 }

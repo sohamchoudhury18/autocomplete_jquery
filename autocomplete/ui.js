@@ -12,7 +12,7 @@ var Ui = function(obj) {
 
 Ui.prototype = {
     constructor: Ui,
-    create_behind_search: function(obj) {
+    create_all: function(obj) {
         this.obj = obj;
         var _this = this;
 
@@ -51,6 +51,8 @@ Ui.prototype = {
         _this.behind_searchbox.appendTo(_this.behind_div);
         this.obj.parent().after(_this.behind_div);
 
+        //creating suggestiondiv
+        this.createsuggestions(this.obj);
     },
     loadelements: function(keyword, obj, data) {
         this.obj = obj;
@@ -90,7 +92,7 @@ Ui.prototype = {
         var _this = this;
         console.log("suggestions loaded");
         //invoking  suggestions div creation
-        this.createsuggestions(this.obj);
+
 
         //fetching data and creating suggestions
         //sample suggestions
@@ -114,6 +116,7 @@ Ui.prototype = {
             console.log(_this.keyword);
             this.sugg.html(val.structured_formatting.main_text.toLowerCase());
             this.sugg.attr("id", _this.obj.attr("id") + "sugg" + index);
+            this.sugg.addClass(_this.obj.attr("id") + "sugg");
             _this.suggestions_div.append(this.sugg);
             if (index == 0) {
                 _this.loadbehind(index);
@@ -133,7 +136,6 @@ Ui.prototype = {
 
         //removing content from cloned div
         _this.suggestions_div.empty();
-
         //assigning id to suggestion div
         _this.suggestions_div.attr("id", this.obj.attr("id") + "_suggestions_div");
         _this.suggestions_div_id = this.obj.attr("id") + "_suggestions_div";
@@ -158,4 +160,21 @@ Ui.prototype = {
         console.log(str);
         return str;
     },
+    onclick: function(ele) {
+        console.log(ele);
+        this.obj.val(ele.text());
+        this.behind_searchbox.val(ele.text());
+    },
+    onhover: function(ele) {
+        this.behind_searchbox.val(ele.text());
+        ele.css({
+            "box-shadow": "5px 10px 5px grey"
+        });
+    },
+    offhover: function(ele) {
+        this.behind_searchbox.val(" ");
+        ele.css({
+            "box-shadow": "0px 0px 0px"
+        });
+    }
 };
