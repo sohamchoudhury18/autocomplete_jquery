@@ -8,6 +8,8 @@ var Ui = function(obj) {
     this.suggestions_div_id = null;
     this.samplesuggestions = null;
     this.obj = obj;
+    this.identifier= this.obj.id;
+    __this = this;
 };
 
 Ui.prototype = {
@@ -55,10 +57,11 @@ Ui.prototype = {
         this.createsuggestions(this.obj);
     },
     loadelements: function(keyword, obj, data, loc) {
+
         this.obj = obj;
         this.data = data;
         this.loc = loc;
-        console.log(this.loc);
+        // console.log(this.loc);
 
         this.keyword = keyword;
         //loading elements
@@ -71,10 +74,10 @@ Ui.prototype = {
     },
     loadbehind: function(counter) {
         this.counter = counter;
-        console.log(counter);
+        // console.log(counter);
         this.suggestions_div.css("background-color", "white");
         var id = this.obj.attr("id") + "sugg" + this.counter;
-        console.log(id);
+        // console.log(id);
         $("#" + id).prevAll().css({
             "background-color": "white",
         });
@@ -86,7 +89,7 @@ Ui.prototype = {
         });
         this.behind_searchbox.val($("#" + id).text());
         $("#" + id).html(this.replace(this.keyword, $("#" + id).text()));
-        console.log(this.behind_searchbox.val());
+        // console.log(this.behind_searchbox.val());
     },
     loadsuggestions: function(keyword, obj, data, loc) {
         this.obj = obj;
@@ -94,13 +97,11 @@ Ui.prototype = {
         this.data = data;
         this.loc = loc;
         this.location = "";
-        // //this.loc.forEach(function(val, index) {
-        //     this.location += "." + val + "[" + index + "]";
-        // });
+        this.data = this.data;
 
-        console.log(this.data);
+        // console.log(this.data);
         var _this = this;
-        console.log("suggestions loaded");
+        // console.log("suggestions loaded");
         //invoking  suggestions div creation
 
 
@@ -122,9 +123,11 @@ Ui.prototype = {
         }
 
         this.data.forEach(function(val, index) {
+
             this.sugg = _this.samplesuggestions.clone();
-            console.log(val);
-            this.sugg.html(val.name.toLowerCase());
+            // console.log(val);
+            var v = __this.identifier;
+            this.sugg.html(val[v].toLowerCase());
             this.sugg.attr("id", _this.obj.attr("id") + "sugg" + index);
             this.sugg.addClass(_this.obj.attr("id") + "sugg");
             _this.suggestions_div.append(this.sugg);
@@ -138,7 +141,7 @@ Ui.prototype = {
     createsuggestions: function(obj) {
         this.obj = obj;
         var _this = this;
-        console.log("create suggestions div");
+        // console.log("create suggestions div");
         //creating suggestions div
 
         //cloning
@@ -167,11 +170,11 @@ Ui.prototype = {
     replace: function(key, val) {
         var str;
         str = val.replace(key, "<span style='background-color:yellow'>" + key + "</span>");
-        console.log(str);
+        // console.log(str);
         return str;
     },
     onclick: function(ele) {
-        console.log(ele);
+        // console.log(ele);
         this.obj.val(ele.text());
         this.behind_searchbox.val(ele.text());
     },

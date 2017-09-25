@@ -7,9 +7,9 @@ Api.prototype = {
     constructor: Api,
     ajaxcall: function(keyword, url, argumentsarr, datalocation, seperator, callback) {
         if (keyword != "") {
-            console.log(seperator);
+            // console.log(seperator);
             this.argstr = "";
-            this.dataloc = "";
+            this.dataloc = datalocation;
             this.index;
             var _this = this;
 
@@ -18,25 +18,38 @@ Api.prototype = {
                 if (val == "keyword") {
                     argumentsarr[index] = keyword;
                     _this.index = index;
-                }
-                else {
+                    // console.log(val);
+                } else {
                     argumentsarr[_this.index] = keyword;
                 }
             });
 
-            console.log(argumentsarr);
+            // console.log(argumentsarr);
 
             argumentsarr.forEach(function(val, index) {
-                _this.argstr += seperator + val
+                _this.argstr += seperator[index] + val
             });
+            // console.log(_this.argstr);
             url += _this.argstr;
+
             console.log(url);
             $.ajax({
                 url: url,
                 //url: "samplejson/sample.json",
+                //url:"https://api.github.com/search/repositories?q=hardeep",
                 success: function(jsonobj) {
                     console.log(jsonobj);
-                    callback(jsonobj.data, keyword);
+                    console.log(_this.dataloc);
+                    var response = jsonobj;
+                    _this.dataloc.forEach(function(val,index){
+                        response = response[val];
+                        console.log(response);
+                    });
+                    response = response.slice(0,5);
+
+                    console.log(response);
+
+                    callback(response, keyword);
                 }
             });
 
@@ -44,19 +57,6 @@ Api.prototype = {
 
 
         }
-
-        // $.ajax({
-        //     url: url,
-        //     // dataType: 'jsonp',
-        //     cors: true,
-        //     contentType: 'application/json',
-        //     // headers: {
-        //     //     'Access-Control-Allow-Origin': "https://sam-samz18.c9users.io",
-        //     // },
-        //     success: function(res) {
-        //         console.log(res);
-        //     }
-        // });
 
     }
 };

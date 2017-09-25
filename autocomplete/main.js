@@ -4,7 +4,7 @@
     global Event
 */
 
-$.fn.autocomplete = function(url, keyboardval, mouseval, args, datalocation, seperator) {
+$.fn.autocomplete = function(url, keyboardval, mouseval, args, datalocation, seperator,id) {
 
     //init parameters
     this.url = url;
@@ -13,6 +13,7 @@ $.fn.autocomplete = function(url, keyboardval, mouseval, args, datalocation, sep
     this.args = args;
     this.datalocation = datalocation;
     this.seperator = seperator;
+    this.id = id;
 
     //init fns
     this.Ui = new Ui(this);

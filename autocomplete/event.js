@@ -23,17 +23,17 @@ Event.prototype = {
 
         //on click on suggestion
         $(document).on("click", onclkid, function(e) {
-            console.log($(e.target));
+            // console.log($(e.target));
             _this.ui.onclick($(e.target));
         });
 
         //on hover suggestion
         $(document).on("mouseenter", onhoverclass, function(e) {
-            console.log($(e.target));
+            // console.log($(e.target));
             _this.ui.onhover($(e.target));
         });
         $(document).on("mouseleave", onhoverclass, function(e) {
-            console.log($(e.target));
+            // console.log($(e.target));
             _this.ui.offhover($(e.target));
         });
     },
@@ -54,11 +54,11 @@ Event.prototype = {
 
                 //function calling as per keydown press
                 if (e.key == "ArrowRight" | e.key == "Enter") {
-                    console.log(e.key);
+                    // console.log(e.key);
                     _this.ui.copybehind(_this.obj);
                 }
                 else if (e.key == "ArrowDown") {
-                    console.log("adown");
+                    // console.log("adown");
                     if (_this.counter == 0) {
                         _this.counter++;
                         _this.ui.loadbehind(_this.counter);
@@ -77,7 +77,7 @@ Event.prototype = {
 
                 }
                 else if (e.key == "ArrowUp") {
-                    console.log("aup");
+                    // console.log("aup");
                     if (_this.counter > 0) {
                         _this.counter--;
                         _this.ui.loadbehind(_this.counter);
